@@ -14,4 +14,6 @@ spring:
       properties:
         spring.json.trusted.packages: "*"
         spring.json.value.default.type: com.jpmc.midascore.foundation.Transaction
+        max.partition.fetch.bytes: 1048576
+        fetch.max.bytes: 10485760
     bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
