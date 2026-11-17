@@ -1,0 +1,24 @@
+# Git
+.git
+.gitignore
+
+# Build output
+target/
+
+# IDE and Editor files
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Logs and test artifacts
+*.log
+
+# External testing services not required for midas-core build
+services/
