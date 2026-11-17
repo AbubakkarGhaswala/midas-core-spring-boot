@@ -1,11 +1,19 @@
 package com.jpmc.midascore.foundation;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Transaction {
+    @JsonProperty("senderId")
+    @JsonAlias({"fromUserId", "senderId"})
     private long senderId;
+
+    @JsonProperty("recipientId")
+    @JsonAlias({"toUserId", "recipientId"})
     private long recipientId;
+
     private float amount;
 
     public Transaction() {
@@ -25,12 +33,28 @@ public class Transaction {
         this.senderId = senderId;
     }
 
+    public long getFromUserId() {
+        return senderId;
+    }
+
+    public void setFromUserId(long fromUserId) {
+        this.senderId = fromUserId;
+    }
+
     public long getRecipientId() {
         return recipientId;
     }
 
     public void setRecipientId(long recipientId) {
         this.recipientId = recipientId;
+    }
+
+    public long getToUserId() {
+        return recipientId;
+    }
+
+    public void setToUserId(long toUserId) {
+        this.recipientId = toUserId;
     }
 
     public float getAmount() {
